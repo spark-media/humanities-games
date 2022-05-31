@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto&display=swap');
+body{
+    background-color:#66758a;
+    color: white;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+}
+#gamespace:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: -1;
+    opacity: 0.1;
+    filter: blur(0);
+    transition: all 300ms ease-in-out;
+    opacity:  0;
+}
+#gamespace.launch-1:after {
+    opacity: 1;
+}
+#gamespace.launch-1.launch-2:after {
+    filter: blur(3px);
+    opacity: .1;
+}
+#gamespace .deck-wrap {
+    opacity: 0;
+    transition:  all 300ms ease-in-out;
+}
+#gamespace.launch-2 .deck-wrap {
+    animation-duration: 500ms;
+    animation-name: slideup;
+    animation-fill-mode: forwards;
+}
+
+#gamespace.launch-2 .deck-wrap:nth-of-type(2) {
+    animation-delay: 300ms;
+}
+#gamespace.launch-2 .deck-wrap:nth-of-type(3) {
+    animation-delay: 600ms;
+}
+#gamespace.launch-2 .deck-wrap:nth-of-type(4) {
+    animation-delay: 900ms;
+}
+#gamespace.launch-2 .deck-wrap:nth-of-type(5) {
+    animation-delay: 1200ms;
+}
+#gamespace.launch-2 .deck-wrap:nth-of-type(6) {
+    animation-delay: 1500ms;
+}
+
+#gamespace .menu {
+    opacity:  0;
+    transition:  opacity 300ms ease-in-out;
+}
+#gamespace.launch-2 .menu {
+    opacity:  1;
+}
+
+@keyframes slideup {
+  from {
+    opacity:  0;
+    transform:  translateY(40px);
+  }
+
+  to {
+    opacity:  1;
+    transform:  translateY(0);
+  }
+}
+
+
+
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+.menu{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;    
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    text-align: right;
+}
+.menu > div {
+    padding: 5px 15px 0 15px;
+    font-size: 2vw;
+}
+.menu > div p {
+    margin: 0;
+}
+#header {
+    width:  100%;
+    display: flex;
+    justify-content: flex-end;
+}
+#header p {
+     max-width:  75%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 2.4vw;
+    text-align: right;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around; 
+    height: 95%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px 15px 5px 5px;
+    box-sizing: border-box;
+}
+
+#deck-wrapper {
+    padding: 5px 10px;
+    margin-top: 8vw;
+}
+#deck-wrapper{ 
+    display:flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width:  55vw;
+    max-height: 100%;
+    overflow: scroll;
+}
+#deck-wrapper::-webkit-scrollbar, #gamespace::-webkit-scrollbar {
+    display: none;
+}
+#deck-wrapper p {
+    text-align: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2vw;
+    margin-top:  2px;
+    margin-bottom:  5px;
+}
+
+.deck-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding:  0;
+    width:  18vw;
+    
+}
+
+.deck{
+    border: 2px solid #333;
+    overflow: hidden;
+    height: 12vw;
+    width: 20vw;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 2px 6px rgba(52,59,69,0.6);
+    user-select: none;
+    opacity: .8;
+    position: relative;
+    z-index: 1;
+}
+.deck:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    background: url(https://images.pexels.com/photos/934067/pexels-photo-934067.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: -1;
+    opacity: 1;
+}
+
+.deck:hover{
+    border-color: #c28f4e;
+}
+
+.deck:active{
+    text-shadow: 0px 2px 3px #343b45;
+}
+
+/* Varying decks can display */
+#deck-wrapper {
+    width:  80vw;
+}
+#deck-wrapper .deck-wrap {
+    width:  33.33%;
+}
+#deck-wrapper.deck-total-4 .deck-wrap {
+    width:  50%;
+}
+#deck-wrapper.deck-total-4 .deck-wrap .deck {
+    height: 10vw;
+    width: 15vw;
+}
+#deck-wrapper.deck-total-2, #deck-wrapper.deck-total-1 {
+    align-items: center;
+}
+
+
+@media all and (max-width: 618px){
+/*    .deck {
+        border-width:  2px;
+        width:  12vw;
+        height:  7.5vw;
+    }*/
+}
+@media all and (max-width: 500px){
+    .deck {
+        border-width:  1px;
+        width:  15vw;
+        height:  9vw;
+    }
+}
+
+
+@media (min-aspect-ratio:16/9) {
+    .deck {
+        border-width:  2px;
+        /*width:  10vw;
+        height:  6vw;*/
+        width:  20vw;
+        height: 12vw;
+    }
+}

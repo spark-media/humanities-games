@@ -1,0 +1,336 @@
+{
+    "title" : "Word Catcher",
+    "slug" : "word-catcher",
+    "packet" : "https://assets.humanities.games/packets/word-catcher.pdf",
+    "user_fields" : [
+        {
+            "key" : "text.intro",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.winTitle",
+            "start_value" : "Success",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.winText",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.loseTitle",
+            "start_value" : "Try Again",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.loseText",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "images.run-1",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "images.run-2",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "images.token-1",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "images.token-2",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "images.background",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "options.winScore",
+            "start_value" : 100,
+            "use_custom" : false
+        },
+        {
+            "key" : "options.keywords",
+            "start_value" : [],
+            "use_custom" : false
+        }
+    ],
+    "form" : {
+        "tabs" : [
+            {
+                "label" : "Text",
+                "sections" : [
+                    {
+                        "label" : "Help Details",
+                        "fields" : [
+                            {
+                                "key" : "text.intro",
+                                "type" : "wysiwyg",
+                                "label" : "Introduction",
+                                "description" : "What the player first reads when the minigame launches."
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Victory Details",
+                        "description" : "What the player sees when they win.",
+                        "fields" : [
+                            {
+                                "key" : "text.winTitle",
+                                "type" : "text",
+                                "label" : "Title",
+                                "description" : ""
+                            },
+                            {
+                                "key" : "text.winText",
+                                "type" : "wysiwyg",
+                                "label" : "Text",
+                                "description" : ""
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Try Again Details",
+                        "description" : "What the player sees when they lose.",
+                        "fields" : [
+                            {
+                                "key" : "text.loseTitle",
+                                "type" : "text",
+                                "label" : "Title",
+                                "description" : ""
+                            },
+                            {
+                                "key" : "text.loseText",
+                                "type" : "wysiwyg",
+                                "label" : "Text",
+                                "description" : ""
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Clues",
+                        "fields" : [
+                            {
+                                "key" : "options.keywords",
+                                "type" : "repeater",
+                                "label" : "Keywords",
+                                "description" : "Note: These appear at random, so the order in which you add them here does not matter."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label" : "Art",
+                "sections" : [
+                    {
+                        "label" : "Runner / Token",
+                        "fields" : [
+                            {
+                                "key" : "character-page-group",
+                                "type" : "page-group",
+                                "page" : "character",
+                                "fields" : [
+                                    {
+                                        "key" : "images.run-1",
+                                        "type" : "image",
+                                        "animation_group" : "run",
+                                        "label" : "Run Pose 1",
+                                        "description" : ""
+                                    },
+                                    {
+                                        "key" : "images.run-2",
+                                        "type" : "image",
+                                        "animation_group" : "run",
+                                        "label" : "Run Pose 2",
+                                        "description" : ""
+                                    },
+                                    {
+                                        "key" : "images.token-1",
+                                        "type" : "image",
+                                        "label" : "Token 1",
+                                        "description" : ""
+                                    },
+                                    {
+                                        "key" : "images.token-2",
+                                        "type" : "image",
+                                        "label" : "Token 2",
+                                        "description" : ""
+                                    }         
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Background",
+                        "fields" : [
+                            {
+                                "key" : "background-page-group",
+                                "type" : "page-group",
+                                "page" : "background",
+                                "fields" : [
+                                    {
+                                        "key" : "images.background",
+                                        "type" : "image",
+                                        "label" : "Background",
+                                        "description" : ""
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label" : "Options",
+                "sections" : [
+                    {
+                        "fields" : [
+                            {
+                                "key" : "options.winScore",
+                                "type" : "number",
+                                "min" : 1,
+                                "max" : 5000,
+                                "label" : "Win Score",
+                                "description" : "How well the player needs to do in order to win. Be realistic!"
+                            }
+                        ]
+                    }
+                ]
+            } 
+        ]
+    },
+    "text":{
+        "controls" : {
+            "default" : "<p>Use the arrow keys or the joystick in the bottom right of the screen to move up and down. Collect objects for the correct words while avoiding the wrong ones.</p><p>Earn more points the faster you collect a correct token!</p>"
+        },
+        "title" : {
+            "default" : "Word Catcher"
+        },
+        "intro" : {
+            "default" : "<p>Background content for what we hope to do.</p>"
+        },
+        "winTitle" : {
+            "default" : "Success"
+        },
+        "winText" : {
+            "default" : "<p>What this victory represents and why.</p>"
+        },
+        "loseTitle" : {
+            "default" : "Try Again"
+        },
+        "loseText" : {
+            "default" : "<p>Challenges this effort may relate to.</p>"
+        }
+    },
+    "images":{
+        "run-1":{
+            "default": {
+                "file" : "defaults/run1.png",
+                "bounds" : {
+                    "x" : 2,
+                    "y" : 10,
+                    "width" : 252,
+                    "height" : 239
+                }
+            }
+        },
+        "run-2":{
+            "default" : {
+                "file" : "defaults/run2.png",
+                "bounds" : {
+                    "x" : 2,
+                    "y" : 8,
+                    "width" : 252,
+                    "height" : 232
+                } 
+            }
+        },
+        "token-1":{
+            "default" : {
+                "file" : "defaults/token.png",
+                "bounds" : {
+                    "x" : 8,
+                    "y" : 59,
+                    "height" : 164,
+                    "width" : 246
+                }
+            }
+        },
+        "token-2":{
+            "default" : {
+                "file" : "defaults/token.png",
+                "bounds" : {
+                    "x" : 5,
+                    "y" : 48,
+                    "width" : 249,
+                    "height" : 202
+                }
+            }
+        },
+        "background":{
+            "default" : {
+                "file" : "defaults/background.png"
+            }
+        }
+    },
+    "sounds":{
+
+    },
+    "count" : {
+        "token" : {
+            "default" : 2
+        }
+    },
+    "options":{
+        "winScore" : {
+            "default" : 100
+        },
+        "keywords" : {
+            "fields" : [
+                {
+                    "key" : "text",
+                    "type" : "text",
+                    "label" : "Keyword",
+                    "description" : "What appears on screen when the token does.",
+                    "start_value" : ""
+                },
+                {
+                    "key" : "correct",
+                    "type" : "boolean",
+                    "label" : "Correct Answer?",
+                    "description" : "",
+                    "start_value" : true
+                },
+                {
+                    "key" : "description",
+                    "type" : "wysiwyg",
+                    "label" : "Description",
+                    "description" : "What the player sees at the end if they collect this keyword's token. Make sure to include the keyword(s) above in the explanation text.",
+                    "start_value" : ""
+                }
+            ],
+            "default" : [
+                {
+                    "text": "Right",
+                    "description": "<p><strong>This answer</strong> is correct.</p>", 
+                    "correct": true
+                },
+                {
+                    "text": "Wrong",
+                    "description": "<p><strong>This answer</strong> is incorrect.</p>", 
+                    "correct": false
+                }
+            ]
+        }
+    }
+}

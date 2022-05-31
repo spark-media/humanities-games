@@ -1,0 +1,366 @@
+{
+    "title" : "Sequence",
+    "slug" : "sequence",
+    "packet" : "https://assets.humanities.games/packets/sequence.pdf",
+    "user_fields" : [
+        {
+            "key" : "text.intro",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.winTitle",
+            "start_value" : "Success",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.winText",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.loseTitle",
+            "start_value" : "Try Again",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.loseText",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "images.background",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "images.character",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "images.start-screen",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "options.items",
+            "start_value" : [],
+            "use_custom" : false
+        } 
+    ],
+    "form" : {
+        "tabs" : [
+            {
+                "label" : "Text",
+                "sections" : [
+                    {
+                        "label" : "Help Details",
+                        "fields" : [
+                            {
+                                "key" : "text.intro",
+                                "type" : "wysiwyg",
+                                "label" : "Introduction",
+                                "description" : "What the player first reads when the minigame launches."
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Victory Details",
+                        "description" : "What the player sees when they win.",
+                        "fields" : [
+                            {
+                                "key" : "text.winTitle",
+                                "type" : "text",
+                                "label" : "Title",
+                                "description" : ""
+                            },
+                            {
+                                "key" : "text.winText",
+                                "type" : "wysiwyg",
+                                "label" : "Text",
+                                "description" : ""
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Try Again Details",
+                        "description" : "What the player sees when they lose.",
+                        "fields" : [
+                            {
+                                "key" : "text.loseTitle",
+                                "type" : "text",
+                                "label" : "Title",
+                                "description" : ""
+                            },
+                            {
+                                "key" : "text.loseText",
+                                "type" : "wysiwyg",
+                                "label" : "Text",
+                                "description" : ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label" : "Steps",
+                "sections" : [
+                    {
+                        "fields" : [
+                            {
+                                "key" : "options.items",
+                                "type" : "repeater",
+                                "label" : "Steps",
+                                "description" : "Note: The order they appear here is considered the 'correct' order in the game.",
+                                "addText" : "Step"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label" : "Art",
+                "sections" : [
+                    {
+                        "label" : "Character / Start Screen",
+                        "fields" : [
+                            {
+                                "key" : "character-page-group",
+                                "type" : "page-group",
+                                "page" : "character",
+                                "fields" : [
+                                    {
+                                        "key" : "images.character",
+                                        "type" : "image",
+                                        "label" : "Character",
+                                        "description" : ""
+                                    },
+                                    {
+                                        "key" : "images.start-screen",
+                                        "type" : "image",
+                                        "label" : "Start Screen",
+                                        "description" : ""
+                                    }        
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Background",
+                        "fields" : [
+                            {
+                                "key" : "background-page-group",
+                                "type" : "page-group",
+                                "page" : "background",
+                                "fields" : [
+                                    {
+                                        "key" : "images.background",
+                                        "type" : "image",
+                                        "label" : "Background",
+                                        "description" : ""
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            } 
+        ]
+    },
+    "text": { 
+        "controls" : {
+            "default" : "<p>Drag items from the right item panel over to the left image.</p><p>Make sure you do so in the right order!</p>"
+        },
+        "title" : {
+            "default" : "Demo Sequence"
+        },
+        "intro" : {
+            "default" : "<p>Intro text for what we are about to do.</p>"
+        },
+        "winTitle" : {
+            "default" : "Success"
+        },
+        "winText" : {
+            "default" : "<p>You did it.</p>"
+        },
+        "loseTitle" : {
+            "default" : "Try Again"
+        },
+        "loseText" : {
+            "default" : "<p>Sorry - please try again.</p>"
+        }
+    },
+    "images":{
+        "background":{
+            "default": {
+                "id": 178,
+                "bounds": null,
+                "file": "defaults/background-4.jpg"
+            }
+        },
+        "character":{
+            "default": {
+                "id": 173,
+                "bounds": {
+                    "x": 33,
+                    "y": 13,
+                    "width": 201,
+                    "height": 241
+                },
+                "file": "defaults/character-1.png"
+            }
+        },
+        "start-screen":{
+            "default": {
+                "id": 172,
+                "bounds": {
+                    "x": 56,
+                    "y": 120,
+                    "width": 1797,
+                    "height": 913
+                },
+                "file": "defaults/start-screen.png"
+            }
+        }
+    },
+    "sounds":{
+
+    },
+    "options":{
+        "items" : {
+            "fields" : [
+                {
+                    "key" : "name",
+                    "type" : "text",
+                    "label" : "Step {{ index }} Title",
+                    "description" : "In just a few words.",
+                    "start_value" : ""
+                },
+                {
+                    "key" : "image",
+                    "type" : "image",
+                    "page" : "item",
+                    "singleKey" : "item",
+                    "label" : "Step {{ index }} Artwork",
+                    "description" : "Players choose this item.",
+                    "start_value" : null
+                },
+                {
+                    "key" : "panel",
+                    "type" : "image",
+                    "page" : "item",
+                    "singleKey" : "panel",
+                    "label" : "Step {{ index }} Result Art",
+                    "description" : "Players see this artwork if they choose correctly.",
+                    "start_value" : null
+                },
+                {
+                    "key" : "description",
+                    "type" : "wysiwyg",
+                    "label" : "Description",
+                    "description" : "",
+                    "start_value" : ""
+                }
+            ],
+            "default" : [
+                {
+                    "name": "Remove Overburden",
+                    "image": {
+                        "id": 163,
+                        "bounds": {
+                            "x": 58,
+                            "y": 9,
+                            "width": 159,
+                            "height": 197
+                        },
+                        "file": "defaults/item1.png"
+                    },
+                    "panel": {
+                        "id": 162,
+                        "file": "defaults/result-1.png",
+                        "game_bounds": {
+                            "x": 8,
+                            "y": 61,
+                            "width": 1857,
+                            "height": 962
+                        }
+                    },
+                    "description": "<p>The awl works as a probe, delicately removing the overburden to reveal the size of the fossil.</p>"
+                },
+                {
+                    "name": "Trench Around Fossil",
+                    "image": {
+                        "id": 169,
+                        "bounds": {
+                            "x": 9,
+                            "y": 2,
+                            "width": 230,
+                            "height": 248
+                        },
+                        "file": "defaults/item-2.png"
+                    },
+                    "panel": {
+                        "id": 174,
+                        "bounds": {
+                            "x": 16,
+                            "y": 104,
+                            "width": 1891,
+                            "height": 922
+                        },
+                        "file": "defaults/result-2.png"
+                    },
+                    "description": "<p>After the fossil border is found, a rock hammer is perfect for digging around the fossil until it sits on a pedestal.</p>"
+                },
+                {
+                    "name": "Jacket Fossil",
+                    "image": {
+                        "id": 170,
+                        "bounds": {
+                            "x": 49,
+                            "y": 19,
+                            "width": 189,
+                            "height": 215
+                        },
+                        "file": "defaults/item-3.png"
+                    },
+                    "panel": {
+                        "id": 171,
+                        "bounds": {
+                            "x": 9,
+                            "y": 91,
+                            "width": 1893,
+                            "height": 948
+                        },
+                        "file": "defaults/result-3.png"
+                    },
+                    "description": "<p>Before digging below the fossil, it must be jacketed. Plaster bandages will be used.</p>"
+                },
+                {
+                    "name": "Undercut Fossil",
+                    "image": {
+                        "id": 177,
+                        "bounds": {
+                            "x": 7,
+                            "y": 5,
+                            "width": 241,
+                            "height": 212
+                        },
+                        "file": "defaults/item-4.png"
+                    },
+                    "panel": {
+                        "id": 175,
+                        "file": "defaults/result-4.png",
+                        "game_bounds": {
+                            "x": 227,
+                            "y": 138,
+                            "width": 1597,
+                            "height": 906
+                        }
+                    },
+                    "description": "<p>To be continued...</p>"
+                }
+            ]
+        }
+    }
+}

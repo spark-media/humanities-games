@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>h.g - Quiz Gate</title>
+        <style>
+            body {
+                margin:  0;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Game view for this game. -->
+        <div id="gamespace"></div>
+
+        <!-- Required for all games -->     
+        <script src="../render/render.js"></script>
+        
+
+        <!--
+            Game-specific includes
+        -->
+
+        <!-- Libraries -->
+        <script src="../render/libs/phaser3.js"></script>
+
+        <!-- Files -->
+        <script src="js/game.js"></script>
+        <script src="js/config.js"></script>
+
+        <!-- 
+            Event handling 
+            (different based on library) 
+        -->
+        <script>
+            hgListen('hgPause', function(e) {
+                game.scene.pause("GameJS");
+            });
+            hgListen('hgResume', function(e) {
+                game.scene.resume("GameJS");
+            });
+        </script>
+
+        <!-- Custom code as needed -->
+        <script>
+
+        </script>
+    </body>
+</html>

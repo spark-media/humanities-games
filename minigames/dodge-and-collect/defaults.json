@@ -1,0 +1,383 @@
+{
+    "title" : "Dodge and Collect",
+    "slug" : "dodge-and-collect",
+    "packet" : "https://assets.humanities.games/packets/dodge-and-collect.pdf",
+    "user_fields" : [
+        {
+            "key" : "text.intro",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.winTitle",
+            "start_value" : "Success",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.winText",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.loseTitle",
+            "start_value" : "Try Again",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.loseText",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "images.run-1",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "images.run-2",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "options.collectibles",
+            "start_value" : [],
+            "use_custom" : false
+        },
+        {
+            "key" : "options.projectiles",
+            "start_value" : [],
+            "use_custom" : false
+        },
+        {
+            "key" : "images.background",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "options.winScore",
+            "start_value" : 500,
+            "use_custom" : false
+        }
+    ],
+    "form" : {
+        "tabs" : [
+            {
+                "label" : "Text",
+                "sections" : [
+                    {
+                        "label" : "Help Details",
+                        "fields" : [
+                            {
+                                "key" : "text.intro",
+                                "type" : "wysiwyg",
+                                "label" : "Introduction",
+                                "description" : "What the player first reads when the minigame launches."
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Victory Details",
+                        "description" : "What the player sees when they win.",
+                        "fields" : [
+                            {
+                                "key" : "text.winTitle",
+                                "type" : "text",
+                                "label" : "Title",
+                                "description" : ""
+                            },
+                            {
+                                "key" : "text.winText",
+                                "type" : "wysiwyg",
+                                "label" : "Text",
+                                "description" : ""
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Try Again Details",
+                        "description" : "What the player sees when they lose.",
+                        "fields" : [
+                            {
+                                "key" : "text.loseTitle",
+                                "type" : "text",
+                                "label" : "Title",
+                                "description" : ""
+                            },
+                            {
+                                "key" : "text.loseText",
+                                "type" : "wysiwyg",
+                                "label" : "Text",
+                                "description" : ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label" : "Items",
+                "sections" : [
+                    {
+                        "label" : "Collectibles",
+                        "fields" : [
+                            {
+                                "key" : "options.collectibles",
+                                "type" : "repeater",
+                                "label" : "Collectibles",
+                                "description" : "Maximum of 4.",
+                                "addText" : "Collectible",
+                                "max" : 4
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Projectiles",
+                        "fields" : [
+                            {
+                                "key" : "options.projectiles",
+                                "type" : "repeater",
+                                "label" : "Projectile",
+                                "description" : "What items are negative for the player to encounter?",
+                                "addText" : "Projectile",
+                                "max" : 4
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label" : "Options",
+                "sections" : [
+                    {
+                        "label" : "Character",
+                        "fields" : [
+                            {
+                                "key" : "character-page-group",
+                                "type" : "page-group",
+                                "page" : "character",
+                                "fields" : [
+                                    {
+                                        "key" : "images.idle",
+                                        "type" : "image",
+                                        "label" : "Idle",
+                                        "description" : ""
+                                    },
+                                    {
+                                        "key" : "images.run-1",
+                                        "type" : "image",
+                                        "animation_group" : "run",
+                                        "label" : "Run Pose 1",
+                                        "description" : ""
+                                    },
+                                    {
+                                        "key" : "images.run-2",
+                                        "type" : "image",
+                                        "animation_group" : "run",
+                                        "label" : "Run Pose 2",
+                                        "description" : ""
+                                    }        
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Background",
+                        "fields" : [
+                            {
+                                "key" : "background-page-group",
+                                "type" : "page-group",
+                                "page" : "background",
+                                "fields" : [
+                                    {
+                                        "key" : "images.background",
+                                        "type" : "image",
+                                        "label" : "Background",
+                                        "description" : ""
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Score",
+                        "fields" : [
+                            {
+                                "key" : "options.winScore",
+                                "type" : "number",
+                                "min" : 1,
+                                "max" : 5000,
+                                "label" : "Win Score",
+                                "description" : "How well the player needs to do in order to win. Be realistic!"
+                            }
+                        ]
+                    }
+                ]
+            } 
+        ]
+    },
+    "text":{
+        "controls" : {
+            "default" : "<p>Use the arrow keys or the joystick in the bottom right of the screen to move, avoiding obstacles and collecting items.</p>"
+        },
+        "title" : {
+            "default" : "Dodge and Collect"
+        },
+        "intro" : {
+            "default" : "<p>Intro text for what we are about to do.</p>"
+        },
+        "winTitle" : {
+            "default" : "Success"
+        },
+        "winText" : {
+            "default" : "<p>You did it.</p>"
+        },
+        "loseTitle" : {
+            "default" : "Try Again"
+        },
+        "loseText" : {
+            "default" : "<p>Sorry - please try again.</p>"
+        }
+    },
+    "images":{   
+        "idle":{
+            "default" : {
+                "file" : "defaults/diver-1-art-1.png",
+                "bounds" : {
+                    "x" : 2,
+                    "y" : 10,
+                    "width" : 252,
+                    "height" : 239
+                }
+            }
+        },
+        "run-1":{
+            "default": {
+                "file" : "defaults/diver-side-1-art-1.png",
+                "bounds" : {
+                    "x" : 2,
+                    "y" : 10,
+                    "width" : 252,
+                    "height" : 239
+                }
+            }
+        },
+        "run-2":{
+            "default": {
+                "file" : "defaults/diver-side-2-art-1.png",
+                "bounds" : {
+                    "x" : 2,
+                    "y" : 10,
+                    "width" : 252,
+                    "height" : 239
+                }
+            }
+        },        
+        "background":{
+            "default" : {
+                "file" : "defaults/background-0-art-1.png"
+            }
+        }       
+    },
+    "count" : {
+        "projectile" : {
+            "default" : 2
+        },
+        "collectible" : {
+            "default" : 2
+        }
+    },
+    "sounds":{
+
+    },
+    "options":{
+        "winScore": {
+            "default": 500
+        },
+        "collectibles" : {
+            "fields" : [
+                { 
+                    "key" : "title",
+                    "type" : "text",
+                    "label" : "Item {{ index }} Name",
+                    "description" : "What is this item? Players will see this text at the end.",
+                    "start_value" : ""
+                },
+                {
+                    "key" : "image",
+                    "type" : "image",
+                    "page" : "collectible",
+                    "label" : "Item {{ index }} Artwork",
+                    "description" : "Players collect this item.",
+                    "start_value" : null
+                },
+                {
+                    "key" : "description",
+                    "type" : "wysiwyg",
+                    "label" : "Description",
+                    "description" : "Why is this item relevant?",
+                    "start_value" : ""
+                }
+            ],
+            "default" : [
+                {
+                    "title": "One Fish",
+                    "description": "<p>Example</p>",
+                    "image" : {
+                        "file" : "defaults/fish-1-art-1.png"
+                    }
+                },
+                {
+                    "title": "Two Fish",
+                    "description": "<p>Another example.</p>",
+                    "image" : {
+                        "file" : "defaults/fish-2-art-1.png"
+                    }
+                }
+            ]
+        },
+        "projectiles" : {
+            "fields" : [
+                { 
+                    "key" : "title",
+                    "type" : "text",
+                    "label" : "Item {{ index }} Name",
+                    "description" : "What is this item? Players will see this text at the end.",
+                    "start_value" : ""
+                },
+                {
+                    "key" : "image",
+                    "type" : "image",
+                    "page" : "projectile",
+                    "label" : "Item {{ index }} Artwork",
+                    "description" : "Players avoid this item.",
+                    "start_value" : null
+                },
+                {
+                    "key" : "description",
+                    "type" : "wysiwyg",
+                    "label" : "Description",
+                    "description" : "Why is this item relevant?",
+                    "start_value" : ""
+                }
+            ],
+            "default" : [
+                {
+                    "title": "More Pollution",
+                    "description": "<p>Example</p>",
+                    "image" : {
+                        "file" : "defaults/projectile-1-art-1.png"
+                    }
+                },
+                {
+                    "title": "Pollution",
+                    "description": "<p>Another example.</p>",
+                    "image" : {
+                        "file" : "defaults/projectile-2-art-1.png"
+                    }
+                }
+            ]
+        },
+        "projectileDirection": {
+            "default": "down"
+        }        
+    }
+}

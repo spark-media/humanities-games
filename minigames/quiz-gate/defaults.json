@@ -1,0 +1,333 @@
+{
+    "title" : "Quiz Gate",
+    "slug" : "quiz-gate",
+    "packet" : "https://assets.humanities.games/packets/quiz-gate.pdf",
+    "user_fields" : [
+        {
+            "key" : "text.intro",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.winTitle",
+            "start_value" : "Success",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.winText",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.loseTitle",
+            "start_value" : "Try Again",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.loseText",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "images.background",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "images.avatar",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "images.gate",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "options.winScore",
+            "start_value" : 2,
+            "use_custom" : false
+        },
+        {
+            "key" : "options.questions",
+            "start_value" : [],
+            "use_custom" : false
+        } 
+    ],
+    "form" : {
+        "tabs" : [
+            {
+                "label" : "Text",
+                "sections" : [
+                    {
+                        "label" : "Help Details",
+                        "fields" : [
+                            {
+                                "key" : "text.intro",
+                                "type" : "wysiwyg",
+                                "label" : "Introduction",
+                                "description" : "What the player first reads when the minigame launches."
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Victory Details",
+                        "description" : "What the player sees when they win.",
+                        "fields" : [
+                            {
+                                "key" : "text.winTitle",
+                                "type" : "text",
+                                "label" : "Title",
+                                "description" : ""
+                            },
+                            {
+                                "key" : "text.winText",
+                                "type" : "wysiwyg",
+                                "label" : "Text",
+                                "description" : ""
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Try Again Details",
+                        "description" : "What the player sees when they lose.",
+                        "fields" : [
+                            {
+                                "key" : "text.loseTitle",
+                                "type" : "text",
+                                "label" : "Title",
+                                "description" : ""
+                            },
+                            {
+                                "key" : "text.loseText",
+                                "type" : "wysiwyg",
+                                "label" : "Text",
+                                "description" : ""
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Questions",
+                        "fields" : [
+                            {
+                                "key" : "options.questions",
+                                "type" : "repeater",
+                                "label" : "Questions",
+                                "description" : "Note: These appear at random, so the order in which you add them here does not matter.",
+                                "addText" : "Question"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label" : "Art",
+                "sections" : [
+                    {
+                        "label" : "Character",
+                        "fields" : [
+                            {
+                                "key" : "character-page-group",
+                                "type" : "page-group",
+                                "page" : "character",
+                                "fields" : [
+                                    {
+                                        "key" : "images.avatar",
+                                        "type" : "image",
+                                        "label" : "Character",
+                                        "description" : ""
+                                    }        
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Background",
+                        "fields" : [
+                            {
+                                "key" : "background-page-group",
+                                "type" : "page-group",
+                                "page" : "background",
+                                "fields" : [
+                                    {
+                                        "key" : "images.background",
+                                        "type" : "image",
+                                        "label" : "Background / Goal",
+                                        "description" : ""
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Gate",
+                        "fields" : [
+                            {
+                                "key" : "gate-page-group",
+                                "type" : "page-group",
+                                "page" : "gate",
+                                "fields" : [
+                                    {
+                                        "key" : "images.gate",
+                                        "type" : "image",
+                                        "label" : "Gate",
+                                        "description" : ""
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label" : "Options",
+                "sections" : [
+                    {
+                        "fields" : [
+                            {
+                                "key" : "options.winScore",
+                                "type" : "number",
+                                "min" : 1,
+                                "max" : 5000,
+                                "label" : "Win Score",
+                                "description" : "How many questions the player needs to answer correctly in order to win."
+                            }
+                        ]
+                    }
+                ]
+            } 
+        ]
+    },
+    "text": { 
+        "controls" : {
+            "default" : "<p>Answer questions to shatter the barrier.</p><p>Click or tap the barrier to get started.</p>"
+        },
+        "title" : {
+            "default" : "Demo Quiz Gate"
+        },
+        "intro" : {
+            "default" : "<p>Intro text for what we are about to do.</p>"
+        },
+        "winTitle" : {
+            "default" : "Success"
+        },
+        "winText" : {
+            "default" : "<p>You did it.</p>"
+        },
+        "loseTitle" : {
+            "default" : "Try Again"
+        },
+        "loseText" : {
+            "default" : "<p>Sorry - please try again.</p>"
+        }
+    },
+    "images":{
+        "background":{
+            "default": {
+                "file" : "defaults/quiz-bg.png"
+            }
+        },
+        "avatar":{
+            "default": {
+                "file": "defaults/quiz-avatar.png"
+            }
+        },
+        "gate":{
+            "default": { 
+                "file": "defaults/quiz-gate-3.png"
+            }
+        }
+    },
+    "sounds":{
+
+    },
+    "options":{
+        "winScore" : {
+            "default" : 2
+        },
+        "questions" : {
+            "fields" : [
+                {
+                    "key" : "question",
+                    "type" : "wysiwyg",
+                    "label" : "Question",
+                    "description" : "",
+                    "start_value" : ""
+                },
+                {
+                    "key" : "answers",
+                    "type" : "sub-repeater",
+                    "label" : "Answers",
+                    "description" : "Note: These appear at random, so the order in which you add them here does not matter.",
+                    "start_value" : [],
+                    "addText" : "Answer",
+                    "fields" : [
+                        { 
+                            "key" : "text",
+                            "type" : "text",
+                            "label" : "Answer",
+                            "description" : "",
+                            "start_value" : ""
+                        },
+                        {
+                            "key" : "correct",
+                            "type" : "boolean",
+                            "label" : "Correct Answer?",
+                            "description" : "",
+                            "start_value" : true
+                        }
+                    ]
+                }
+            ],
+            "default" : [
+                {
+                    "question" : "What is the name of this game template?",
+                    "answers" : [
+                        {
+                            "text" : "March of the Questions",
+                            "correct" : false
+                        },
+                        {
+                            "text" : "Quiz Gate",
+                            "correct" : true
+                        },
+                        {
+                            "text" : "The Search for Harmonics",
+                            "correct" : false
+                        }
+                    ]
+                },
+                {
+                    "question" : "What is 2 + 2?",
+                    "answers" : [
+                        {
+                            "text" : "4",
+                            "correct" : true
+                        },
+                        {
+                            "text" : "Eyes looking to the right.",
+                            "correct" : false
+                        }
+                    ]
+                },
+                {
+                    "question" : "What is the wingspan of a swallow?",
+                    "answers" : [
+                        {
+                            "text" : "A distance most fowl.",
+                            "correct" : false
+                        },
+                        {
+                            "text" : "No idea, but this one is the correct choice.",
+                            "correct" : true
+                        },
+                        {
+                            "text" : "45 inches",
+                            "correct" : false
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

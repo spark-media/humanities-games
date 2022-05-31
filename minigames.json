@@ -1,0 +1,12 @@
+{
+	"version" : "2.0",
+	"games" : {
+		"cards-of-chance" : { "name" : "Cards of Chance" },
+		"dodge-and-collect" : { "name" : "Dodge and Collect" },
+		"word-catcher" : { "name" : "Word Catcher" },
+		"word-lantern" : { "name" : "Word Lantern" },
+		"bridge-runner" : { "name" : "Bridge Runner" },
+		"quiz-gate" : { "name" : "Quiz Gate" },
+		"sequence" : { "name" : "Sequence" }
+	}
+}

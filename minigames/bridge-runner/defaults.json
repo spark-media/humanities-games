@@ -1,0 +1,468 @@
+{
+    "title" : "Bridge Runner",
+    "slug" : "bridge-runner",
+    "packet" : "https://assets.humanities.games/packets/bridge-runner.pdf",
+    "user_fields" : [
+        {
+            "key" : "text.intro",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.winTitle",
+            "start_value" : "Success",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.winText",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.loseTitle",
+            "start_value" : "Try Again",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.loseText",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "images.background",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "images.run1",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "images.run2",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "images.jump",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "images.ground",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "images.block",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "options.collectibles",
+            "start_value" : [],
+            "use_custom" : false
+        }
+    ],
+    "form" : {
+        "tabs" : [
+            {
+                "label" : "Text",
+                "sections" : [
+                    {
+                        "label" : "Help Details",
+                        "fields" : [
+                            {
+                                "key" : "text.intro",
+                                "type" : "wysiwyg",
+                                "label" : "Introduction",
+                                "description" : "What the player first reads when the minigame launches."
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Victory Details",
+                        "description" : "What the player sees when they win.",
+                        "fields" : [
+                            {
+                                "key" : "text.winTitle",
+                                "type" : "text",
+                                "label" : "Title",
+                                "description" : ""
+                            },
+                            {
+                                "key" : "text.winText",
+                                "type" : "wysiwyg",
+                                "label" : "Text",
+                                "description" : ""
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Try Again Details",
+                        "description" : "What the player sees when they lose.",
+                        "fields" : [
+                            {
+                                "key" : "text.loseTitle",
+                                "type" : "text",
+                                "label" : "Title",
+                                "description" : ""
+                            },
+                            {
+                                "key" : "text.loseText",
+                                "type" : "wysiwyg",
+                                "label" : "Text",
+                                "description" : ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label" : "Items",
+                "sections" : [
+                    {
+                        "label" : "Collectibles",
+                        "fields" : [
+                            {
+                                "key" : "options.collectibles",
+                                "type" : "repeater",
+                                "label" : "Collectibles",
+                                "description" : "You may create a maximum of four.",
+                                "addText" : "Collectible",
+                                "max" : 4
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label" : "Art",
+                "sections" : [
+                    {
+                        "label" : "Runner",
+                        "fields" : [
+                            {
+                                "key" : "character-page-group",
+                                "type" : "page-group",
+                                "page" : "character",
+                                "fields" : [
+                                    {
+                                        "key" : "images.run1",
+                                        "type" : "image",
+                                        "label" : "Run Pose 1",
+                                        "description" : ""
+                                    },
+                                    {
+                                        "key" : "images.run2",
+                                        "type" : "image",
+                                        "label" : "Run Pose 2",
+                                        "description" : ""
+                                    },
+                                    {
+                                        "key" : "images.jump",
+                                        "type" : "image",
+                                        "label" : "Jump Pose",
+                                        "description" : ""
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Ground & Obstacle",
+                        "fields" : [
+                            {
+                                "key" : "obstacle-page-group",
+                                "type" : "page-group",
+                                "page" : "obstacle",
+                                "fields" : [
+                                    {
+                                        "key" : "images.ground",
+                                        "type" : "image",
+                                        "label" : "Ground",
+                                        "description" : "What the player runs on top of."
+                                    },
+                                    {
+                                        "key" : "images.block",
+                                        "type" : "image",
+                                        "label" : "Obstacle",
+                                        "description" : "This object will block the player from moving forward."
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Background",
+                        "fields" : [
+                            {
+                                "key" : "background-page-group",
+                                "type" : "page-group",
+                                "page" : "background",
+                                "fields" : [
+                                    {
+                                        "key" : "images.background",
+                                        "type" : "image",
+                                        "label" : "Background",
+                                        "description" : ""
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            } 
+        ]
+    },
+    "text": { 
+        "controls" : {
+            "default" : "<p>Press spacebar or tap the screen to jump, collecting items and avoiding cliffs.</p><p>If you reach the end without collecting everything, you will restart with the items you found.</p><p>Fall down a pit, however, and it is game over!</p>"
+        },
+        "title" : {
+            "default" : "Demo Runner"
+        },
+        "intro" : {
+            "default" : "<p>Intro text for what we are about to do.</p>"
+        },
+        "winTitle" : {
+            "default" : "Success"
+        },
+        "winText" : {
+            "default" : "<p>You did it.</p>"
+        },
+        "loseTitle" : {
+            "default" : "Try Again"
+        },
+        "loseText" : {
+            "default" : "<p>Sorry - please try again.</p>"
+        }
+    },
+    "images":{
+        "background":{
+            "default": {
+                "file": "defaults/bridge-bg2.png"
+            }
+        },
+        "run1":{
+            "default" : {
+                "file" : "defaults/run1.png"
+            }
+        },
+        "run2":{
+            "default" : {
+                "file" : "defaults/run2.png"
+            }
+        },
+        "jump":{
+            "default" : {
+                "file" : "defaults/jump.png"
+            }
+        },
+        "ground":{
+            "default" : {
+                "file" : "defaults/med.png"
+            }
+        },
+        "block":{
+            "default" : {
+                "file" : "defaults/br-block.png"
+            }
+        }        
+    },
+    "sounds":{
+
+    },
+    "options":{
+        "collectibleCount" : {
+            "default" : 4
+        },
+        "collectibles" : {
+            "fields" : [
+                { 
+                    "key" : "title",
+                    "type" : "text",
+                    "label" : "Item {{ index }} Name",
+                    "description" : "What is this item? Players will see this text at the end.",
+                    "start_value" : ""
+                },
+                {
+                    "key" : "image",
+                    "type" : "image",
+                    "page" : "collectible",
+                    "label" : "Item {{ index }} Artwork",
+                    "description" : "Players collect this item.",
+                    "start_value" : null
+                },
+                {
+                    "key" : "description",
+                    "type" : "wysiwyg",
+                    "label" : "Description",
+                    "description" : "Why is this item relevant?",
+                    "start_value" : ""
+                }
+            ],
+            "default" : [
+                {
+                    "title": "Quarter Note 1",
+                    "description": "<p>A quarter note.</p>",
+                    "image" : {
+                        "file" : "defaults/bridge-note.png"
+                    }
+                },
+                {
+                    "title": "Quarter Note 2",
+                    "description": "<p>A quarter note.</p>",
+                    "image" : {
+                        "file" : "defaults/bridge-note.png"
+                    }
+                },
+                {
+                    "title": "Quarter Note 3",
+                    "description": "<p>A quarter note.</p>",
+                    "image" : {
+                        "file" : "defaults/bridge-note.png"
+                    }
+                },
+                {
+                    "title": "Quarter Note 4",
+                    "description": "<p>A quarter note.</p>",
+                    "image" : {
+                        "file" : "defaults/bridge-note.png"
+                    }
+                }
+            ]
+        },
+        "levelDesign" : {
+            "default" : "base"
+        },
+        "levels" : {
+            "base" : {
+                "player" : {
+                    "startX" : {
+                        "default" : 0
+                    },
+                    "startY" : {
+                        "default" : 600
+                    }
+                },
+                "collectibles" : {
+                    "default" : [
+                        {
+                            "x": 6100,
+                            "y": 810
+                        },
+                        {
+                            "x": 9200,
+                            "y": 330
+                        },
+                        {
+                            "x": 7800,
+                            "y": 960
+                        },
+                        {
+                            "x": 10800,
+                            "y": 330
+                        }
+                    ]
+                },
+                "obstacles" : {
+                    "default" : [
+                        {
+                            "x": 900,
+                            "y": 210
+                        },
+                        {
+                            "x": 5300,
+                            "y": 440
+                        }, 
+                        {
+                            "x": 7400,
+                            "y": 320
+                        },
+                        {
+                            "x": 8700,
+                            "y": 210
+                        },
+                        {
+                            "x": 8850,
+                            "y": 285
+                        },
+                        {
+                            "x": 9375,
+                            "y": 210
+                        }
+                    ]  
+                },
+                "ground" : {
+                    "default" : [
+                        {
+                            "x": 0,
+                            "y": 0
+                        },
+                        {
+                            "x": 548,
+                            "y": 0
+                        },
+                        {
+                            "x": 1096,
+                            "y": 0
+                        },
+                        {
+                            "x": 1644,
+                            "y": 0
+                        },
+                        {
+                            "x": 2742,
+                            "y": 0
+                        },
+                        {
+                            "x": 4290,
+                            "y": 0
+                        },
+                        {
+                            "x": 4838,
+                            "y": 0
+                        },
+                        {
+                            "x": 5386,
+                            "y": 0
+                        },
+                        {
+                            "x": 5934,
+                            "y": 0
+                        },
+                        {
+                            "x": 6482,
+                            "y": 0
+                        },
+                        {
+                            "x": 5386,
+                            "y": 0
+                        },
+                        {
+                            "x": 8030,
+                            "y": 0
+                        },
+                        {
+                            "x": 8578,
+                            "y": 0
+                        },
+                        {
+                            "x": 9126,
+                            "y": 0
+                        },
+                        {
+                            "x": 9674,
+                            "y": 0
+                        },
+                        {
+                            "x": 10622,
+                            "y": 0
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

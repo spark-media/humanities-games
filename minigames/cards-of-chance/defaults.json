@@ -1,0 +1,548 @@
+{
+    "title" : "Cards of Chance",
+    "slug" : "cards-of-chance",
+    "packet" : "https://assets.humanities.games/packets/cards-of-chance.pdf",
+    "user_fields" : [
+        {
+            "key" : "text.intro",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.winTitle",
+            "start_value" : "Success",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.winText",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.loseTitle",
+            "start_value" : "Try Again",
+            "use_custom" : true
+        },
+        {
+            "key" : "text.loseText",
+            "start_value" : "",
+            "use_custom" : true
+        },
+        {
+            "key" : "images.background",
+            "start_value" : null,
+            "use_custom" : false
+        },
+        {
+            "key" : "options.winScore",
+            "start_value" : 2,
+            "use_custom" : false
+        },
+        {
+            "key" : "options.maxDrawn",
+            "start_value" : 5,
+            "use_custom" : false
+        },
+        {
+            "key" : "options.decks",
+            "start_value" : [],
+            "use_custom" : false
+        }
+    ],
+    "form" : {
+        "tabs" : [
+            {
+                "label" : "Text",
+                "sections" : [
+                    {
+                        "label" : "Help Details",
+                        "fields" : [
+                            {
+                                "key" : "text.intro",
+                                "type" : "wysiwyg",
+                                "label" : "Introduction",
+                                "description" : "What the player first reads when the minigame launches."
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Victory Details",
+                        "description" : "What the player sees when they win.",
+                        "fields" : [
+                            {
+                                "key" : "text.winTitle",
+                                "type" : "text",
+                                "label" : "Title",
+                                "description" : ""
+                            },
+                            {
+                                "key" : "text.winText",
+                                "type" : "wysiwyg",
+                                "label" : "Text",
+                                "description" : ""
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Try Again Details",
+                        "description" : "What the player sees when they lose.",
+                        "fields" : [
+                            {
+                                "key" : "text.loseTitle",
+                                "type" : "text",
+                                "label" : "Title",
+                                "description" : ""
+                            },
+                            {
+                                "key" : "text.loseText",
+                                "type" : "wysiwyg",
+                                "label" : "Text",
+                                "description" : ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label" : "Decks",
+                "sections" : [
+                    {
+                        "label" : "Card Decks",
+                        "fields" : [
+                            {
+                                "key" : "options.decks",
+                                "type" : "repeater",
+                                "label" : "Decks",
+                                "description" : "",
+                                "addText" : "Deck",
+                                "max" : 6
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label" : "Options",
+                "sections" : [
+                    {
+                        "label" : "Background",
+                        "fields" : [
+                            {
+                                "key" : "background-page-group",
+                                "type" : "page-group",
+                                "page" : "background",
+                                "fields" : [
+                                    {
+                                        "key" : "images.background",
+                                        "type" : "image",
+                                        "label" : "Background",
+                                        "description" : ""
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label" : "Game Settings",
+                        "fields" : [
+                            {
+                                "key" : "options.winScore",
+                                "type" : "number",
+                                "min" : 1,
+                                "max" : 5000,
+                                "label" : "Win Score",
+                                "description" : "How well the player needs to do in order to win. Be realistic!"
+                            },
+                            {
+                                "key" : "options.maxDrawn",
+                                "type" : "number",
+                                "min" : 1,
+                                "max" : 5000,
+                                "label" : "# Cards To Choose",
+                                "description" : "How many cards does the player choose in a single playthrough? Make sure this is less than the cards you made!"
+                            }
+                        ]
+                    }
+                ]
+            } 
+        ]
+    },
+    "text": { 
+        "controls" : {
+            "default" : "<p>Choose cards that increase your score.</p>"
+        },
+        "title" : {
+            "default" : "Cards of Chance"
+        },
+        "intro" : {
+            "default" : "<p>Intro text for what we are about to do.</p>"
+        },
+        "winTitle" : {
+            "default" : "Success"
+        },
+        "winText" : {
+            "default" : "<img src=\"/wp-content/plugins/humanities-games/minigames/make-it-or-break-it/defaults/joplin-2.jpg\" /><p>Scott Joplin was dubbed the King of Ragtime. Even after his passing his music was rediscovered and even popularized in 1973 Academy Award-winning film The Sting. His operas were also rediscovered during this time with Treemonisha finally produced, and in 1976 Joplin was awarded a Pulitzer Prize.</p>"
+        },
+        "loseTitle" : {
+            "default" : "Try Again"
+        },
+        "loseText" : {
+            "default" : "<img src=\"/wp-content/plugins/humanities-games/minigames/make-it-or-break-it/defaults/joplin-2.jpg\" /><p>During his lifetime Scott Joplin was not able to find success outside of his ragtime works.</p>"
+        }
+    },
+    "images":{
+        "background" : {
+            "default" : {
+                "file": "defaults/miobi-bg.jpg"
+            }
+        }, 
+        "deck" : {
+            "default" : {
+                "file": "defaults/miobi-bg.jpg"
+            }
+        }
+    },
+    "sounds":{
+
+    },
+    "options":{
+        "winScore" : {
+            "default" : 0
+        },
+        "maxDrawn" : {
+            "default" : 5
+        },
+        "decks" :{
+            "fields" : [
+                { 
+                    "key" : "name",
+                    "type" : "text",
+                    "label" : "Deck {{ index }} Title",
+                    "description" : "Describe in just a word or two what type of cards are in this deck.",
+                    "start_value" : ""
+                },
+                {
+                    "key" : "image",
+                    "type" : "image",
+                    "page" : "deck",
+                    "label" : "Card Back",
+                    "singleKey" : "deck",
+                    "description" : "Players see this art when making a choice.",
+                    "start_value" : null
+                },
+                {
+                    "key" : "cards",
+                    "type" : "sub-repeater",
+                    "label" : "Cards",
+                    "description" : "Note: These appear at random, so the order in which you add them here does not matter.",
+                    "start_value" : [],
+                    "addText" : "Card",
+                    "fields" : [
+                        { 
+                            "key" : "title",
+                            "type" : "text",
+                            "label" : "Card {{ index }} Title",
+                            "description" : "",
+                            "start_value" : ""
+                        },
+                        {
+                            "key" : "image",
+                            "type" : "image",
+                            "page" : "card",
+                            "label" : "Card {{ index }} Image",
+                            "singleKey" : "card",
+                            "description" : "Optional. Appears when the card is selected.",
+                            "start_value" : null
+                        },
+                        { 
+                            "key" : "content",
+                            "type" : "wysiwyg",
+                            "label" : "Card {{ index }} Text",
+                            "description" : "",
+                            "start_value" : ""
+                        },
+                        {
+                            "key" : "points",
+                            "type" : "number",
+                            "label" : "Card {{ index }} Points + / -",
+                            "description" : "Does this card increase or decrease the player's score?",
+                            "start_value" : 0
+                        }
+                    ]
+                }
+            ],
+            "default" : [
+                { 
+                    "name" : "Family Life",
+                    "image" : {
+                        "file": "defaults/miobi-bg.jpg"
+                    },
+                    "cards" : [
+                        {
+                            "title" : "Family",
+                            "content" : "<p>Joplin's family struggled with poverty as a post-slavery generation of African Americans. Joplin's father, Giles, was employed by the railroad, and Florence, Joplin's mother, took up cleaning and doing laundry for white families, and raise Scott and his five siblings.</p>",
+                            "points" : -2,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Family",
+                            "content" : "<p>Joplin's father leaves the family when Joplin is 12 years old. Joplin's mother continues to raise 6 children on her own.</p>",
+                            "points" : -2,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Family",
+                            "content" : "<p>Joplin's parents were musicians, and taught Joplin music at an early age.</p>",
+                            "points" : 3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Family",
+                            "content" : "<p>Giles Joplin, Scott Joplin's father, was born into slavery in North Carolina.</p>",
+                            "points" : -3,
+                            "image" : null
+                        }
+                    ]
+                },          
+                { 
+                    "name" : "Joplin's Music",
+                    "image" : {
+                        "file": "defaults/miobi-bg.jpg"
+                    },
+                    "cards" : [     
+                        {
+                            "title" : "Maple Leaf Rag",
+                            "content" : "<p>Maple Leaf Rag, published in 1899, sold 75,000 copies in 6 months.</p>",
+                            "points" : 3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Ragtime",
+                            "content" : "<p>Scott Joplin is called the \"King of Ragtime\" and published the most successful of the early rags, including \"Maple Leaf Rag\" and \"The Entertainer.\"</p>",
+                            "points" : 3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Julius Weiss",
+                            "content" : "<p>German music teacher Julius Weiss recognized Joplin's musical gifts, gave Joplin free music lessons, taught him to play piano, and introduced him to folk music, classical music, and opera when he was 16 years old.</p>",
+                            "points" : 3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Treemonisha",
+                            "content" : "<p>In 1911 Joplin accuses Irving Berlin of stealing \"A Real Slow Drag\" from his opera Treemonisha for a tune Berlin called Alexander's Ragtime Band. Joplin felt Berlin was too rich, powerful and influential for him to sue.</p>",
+                            "points" : -3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Ragtime",
+                            "content" : "<p>Joplin gets a chance to perform his music at the 1893 Chicago World's Fair, despite the fair's limitation on the involvement of Black people. His music was a hit with the crowd and groundbreaking for Ragtime music.</p>",
+                            "points" : 2,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Treemonisha",
+                            "content" : "<p>Joplin could not find a publisher for Treemonisha and therefore undertook the financial burden to publish Treemonisha himself in a piano-vocal format.</p>",
+                            "points" : -2,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Racism",
+                            "content" : "<p>In 1913, when Joplin is 45, Woodrow Wilson's administration establishes federal segregation in the United States.</p>",
+                            "points" : -3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Treemonisha",
+                            "content" : "<p>Joplin pushes to stage a performance of Treemonisha in 1915. He invited a small audience to hear it at a rehearsal hall in Harlem. Poorly staged, and with only Joplin on piano, the audience, including potential funders, walked out and considered the work a complete failure.</p>",
+                            "points" : -3,
+                            "image" : null
+                        }
+                    ]
+                },
+                {
+                    "name": "Personal Life",
+                    "image" : {
+                        "file": "defaults/miobi-bg.jpg"
+                    },
+                    "cards" : [
+                        {
+                            "title" : "\"A Guest of Honor\"",
+                            "content" : "<p>Joplin completes his first opera, \"A Guest of Honor\" about Theodore Roosevelt's bold decision to invite African American leader Booker T. Washington to the White House.</p>",
+                            "points" : 3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "\"A Guest of Honor\"",
+                            "content" : "<p>On February 16, 1903, Joplin sent a letter and $1 to the United States Copyright Office to apply for copyrights for \"A Guest of Honor.\" The copy at the U.S. Copyright Office was lost and has never been found. No trace of the opera has ever been found and is believed to have been lost forever.</p>",
+                            "points" : -2,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Racism",
+                            "content" : "<p>Joplin did not attend school until he was a teenager, because schools where he grew up in the southern United States were not open to African Americans.</p>",
+                            "points" : -2,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Family",
+                            "content" : "<p>Joplin's daughter from his first marriage dies a few months after birth.</p>",
+                            "points" : -3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Financial Hardship",
+                            "content" : "<p>Scott Joplin was riddled with financial hardships that led to his belongings being confiscated for nonpayment of bills in 1903. It is believed that the score to his first opera, \"A Guest of Honor\" was among the property taken and is now considered lost forever.</p>",
+                            "points" : -3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Racism",
+                            "content" : "<p>In 1896, when Joplin was 28 years old, the U.S. Supreme Court rules that separate but equal is constitutional through the Plessy v. Ferguson case. Immediately local and state laws are created to prohibit Black people from participating fully in American society.</p>",
+                            "points" : -3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Joplin Tours with His First Opera",
+                            "content" : "<p>In August of 1903, Joplin and a troupe of 32 performers began touring \"A Guest of Honor.\" By September someone robbed the company of all the box office receipts. The tour had to end abruptly because Joplin could not pay the company's payroll or pay for their lodging.</p>",
+                            "points" : -3,
+                            "image" : null
+                        }
+                    ]
+                },
+                {
+                    "name": "Adventures",
+                    "image" : {
+                        "file": "defaults/miobi-bg.jpg"
+                    },
+                    "cards" : [
+                        {
+                            "title" : "\"A Guest of Honor\"",
+                            "content" : "<p>Joplin completes his first opera, \"A Guest of Honor\" about Theodore Roosevelt's bold decision to invite African American leader Booker T. Washington to the White House.</p>",
+                            "points" : 3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "\"A Guest of Honor\"",
+                            "content" : "<p>On February 16, 1903, Joplin sent a letter and $1 to the United States Copyright Office to apply for copyrights for \"A Guest of Honor.\" The copy at the U.S. Copyright Office was lost and has never been found. No trace of the opera has ever been found and is believed to have been lost forever.</p>",
+                            "points" : -2,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Racism",
+                            "content" : "<p>Joplin did not attend school until he was a teenager, because schools where he grew up in the southern United States were not open to African Americans.</p>",
+                            "points" : -2,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Financial Hardship",
+                            "content" : "<p>Scott Joplin was riddled with financial hardships that led to his belongings being confiscated for nonpayment of bills in 1903. It is believed that the score to his first opera, \"A Guest of Honor\" was among the property taken and is now considered lost forever.</p>",
+                            "points" : -3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Racism",
+                            "content" : "<p>In 1896, when Joplin was 28 years old, the U.S. Supreme Court rules that separate but equal is constitutional through the Plessy v. Ferguson case. Immediately local and state laws are created to prohibit Black people from participating fully in American society.</p>",
+                            "points" : -3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Joplin Tours with His First Opera",
+                            "content" : "<p>In August of 1903, Joplin and a troupe of 32 performers began touring \"A Guest of Honor.\" By September someone robbed the company of all the box office receipts. The tour had to end abruptly because Joplin could not pay the company's payroll or pay for their lodging.</p>",
+                            "points" : -3,
+                            "image" : null
+                        }
+                    ]
+                },
+                {
+                    "name": "Research",
+                    "image" : {
+                        "file": "defaults/miobi-bg.jpg"
+                    },
+                    "cards" : [
+                        {
+                            "title" : "\"A Guest of Honor\"",
+                            "content" : "<p>Joplin completes his first opera, \"A Guest of Honor\" about Theodore Roosevelt's bold decision to invite African American leader Booker T. Washington to the White House.</p>",
+                            "points" : 3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "\"A Guest of Honor\"",
+                            "content" : "<p>On February 16, 1903, Joplin sent a letter and $1 to the United States Copyright Office to apply for copyrights for \"A Guest of Honor.\" The copy at the U.S. Copyright Office was lost and has never been found. No trace of the opera has ever been found and is believed to have been lost forever.</p>",
+                            "points" : -2,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Racism",
+                            "content" : "<p>Joplin did not attend school until he was a teenager, because schools where he grew up in the southern United States were not open to African Americans.</p>",
+                            "points" : -2,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Financial Hardship",
+                            "content" : "<p>Scott Joplin was riddled with financial hardships that led to his belongings being confiscated for nonpayment of bills in 1903. It is believed that the score to his first opera, \"A Guest of Honor\" was among the property taken and is now considered lost forever.</p>",
+                            "points" : -3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Racism",
+                            "content" : "<p>In 1896, when Joplin was 28 years old, the U.S. Supreme Court rules that separate but equal is constitutional through the Plessy v. Ferguson case. Immediately local and state laws are created to prohibit Black people from participating fully in American society.</p>",
+                            "points" : -3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Joplin Tours with His First Opera",
+                            "content" : "<p>In August of 1903, Joplin and a troupe of 32 performers began touring \"A Guest of Honor.\" By September someone robbed the company of all the box office receipts. The tour had to end abruptly because Joplin could not pay the company's payroll or pay for their lodging.</p>",
+                            "points" : -3,
+                            "image" : null
+                        }
+                    ]
+                },
+                {
+                    "name": "Legacy",
+                    "image" : {
+                        "file": "defaults/miobi-bg.jpg"
+                    },
+                    "cards" : [
+                        {
+                            "title" : "\"A Guest of Honor\"",
+                            "content" : "<p>Joplin completes his first opera, \"A Guest of Honor\" about Theodore Roosevelt's bold decision to invite African American leader Booker T. Washington to the White House.</p>",
+                            "points" : 3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "\"A Guest of Honor\"",
+                            "content" : "<p>On February 16, 1903, Joplin sent a letter and $1 to the United States Copyright Office to apply for copyrights for \"A Guest of Honor.\" The copy at the U.S. Copyright Office was lost and has never been found. No trace of the opera has ever been found and is believed to have been lost forever.</p>",
+                            "points" : -2,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Racism",
+                            "content" : "<p>Joplin did not attend school until he was a teenager, because schools where he grew up in the southern United States were not open to African Americans.</p>",
+                            "points" : -2,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Financial Hardship",
+                            "content" : "<p>Scott Joplin was riddled with financial hardships that led to his belongings being confiscated for nonpayment of bills in 1903. It is believed that the score to his first opera, \"A Guest of Honor\" was among the property taken and is now considered lost forever.</p>",
+                            "points" : -3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Racism",
+                            "content" : "<p>In 1896, when Joplin was 28 years old, the U.S. Supreme Court rules that separate but equal is constitutional through the Plessy v. Ferguson case. Immediately local and state laws are created to prohibit Black people from participating fully in American society.</p>",
+                            "points" : -3,
+                            "image" : null
+                        },
+                        {
+                            "title" : "Joplin Tours with His First Opera",
+                            "content" : "<p>In August of 1903, Joplin and a troupe of 32 performers began touring \"A Guest of Honor.\" By September someone robbed the company of all the box office receipts. The tour had to end abruptly because Joplin could not pay the company's payroll or pay for their lodging.</p>",
+                            "points" : -3,
+                            "image" : null
+                        }
+                    ]
+                }   
+            ]
+        }
+    }
+}

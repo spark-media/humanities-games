@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>h.g - Word Hero</title>
+        <style>
+            body {
+                margin:  0;
+                background: #000;
+            }
+            #joystick-control {
+                position: fixed;
+                bottom:  30px;
+                right:  0;
+                width: 150px;
+                height: 150px;
+                z-index:  1;
+                opacity:  0.5;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Game view for this game. -->
+        <div id="gamespace"></div>
+
+        <!-- Joystick -->
+        <div id="joystick-control"></div>
+
+        <!-- Required for all games -->     
+        <script src="../render/render.js"></script>
+        
+        
+
+        <!--
+            Game-specific includes
+        -->
+
+
+        <!-- Libraries -->
+        <script src="../render/libs/phaser3.js"></script>
+        <script src="../render/libs/joystick.js"></script>
+
+        <!-- Files -->
+        <script src="js/game.js"></script>
+        <script src="js/config.js"></script>
+
+        <!-- 
+            Event handling 
+            (different based on library) 
+        -->
+        <script>
+            hgListen('hgPause', function(e) {
+                game.scene.pause("GameJS");
+            });
+            hgListen('hgResume', function(e) {
+                game.scene.resume("GameJS");
+            });
+        </script>
+
+        <!-- Custom code as needed -->
+        <script>
+            /**
+             * Joystick controls.
+             */
+            var currentDirection = 'C';
+            var downKeys = [];
+            function joystickUpdate(stickData) {
+                var currentKeys = [];
+                if( stickData.cardinalDirection != currentDirection ) {
+                    switch( stickData.cardinalDirection ) {
+                        case 'N' :
+                            currentKeys = [38];
+                        break;
+                        case 'NW' :
+                            currentKeys = [37,38];
+                        break;
+                        case 'NE' :
+                            currentKeys = [39,38];
+                        break;
+                        case 'S' :
+                            currentKeys = [40];
+                        break;
+                        case 'SW' :
+                            currentKeys = [37,40];
+                        break;
+                        case 'SE' :
+                            currentKeys = [39,40];
+                        break;
+                        case 'E' :
+                           currentKeys = [39];
+                        break;
+                        case 'W' :
+                           currentKeys = [37];
+                        break;
+                    }
+                    for( var i = 0; i < downKeys.length; i++ ) {
+                        if( currentKeys.indexOf( downKeys[i] ) < 0) {
+                            window.dispatchEvent(new KeyboardEvent('keyup', {
+                                    keyCode: downKeys[i]
+                                }
+                            ));
+                        }
+                    }
+                    var newDownKeys = [];
+                    for( var i = 0; i < currentKeys.length; i++ ) {
+                        window.dispatchEvent(new KeyboardEvent('keydown', {
+                                keyCode: currentKeys[i]
+                            }
+                        ));
+                        newDownKeys.push(currentKeys[i]);
+                    }
+                    currentDirection = stickData.cardinalDirection;
+                    downKeys = newDownKeys;
+                }
+            }
+            var joystick = new JoyStick('joystick-control', {
+                internalFillColor: '#aaa',
+                internalStrokeColor: '#bbb',
+                externalStrokeColor: '#bbb',
+                externalLineWidth: 1
+            }, joystickUpdate );
+        </script>
+
+    </body>
+</html>
